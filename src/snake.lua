@@ -62,9 +62,9 @@ end
 function Snake:draw()
     for i, v in ipairs(self.body) do
         if i == 1 then
-            love.graphics.setColor(GREEN)
+            love.graphics.setColor(BLUE)
         else
-            love.graphics.setColor(LIGHT_GREEN)
+            love.graphics.setColor(LIGHT_BLUE)
         end
         love.graphics.rectangle('fill', v.x, v.y, Snake.body_width, Snake.body_height)
     end
