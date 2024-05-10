@@ -1,10 +1,3 @@
---[[
-    FIXME:
-    1. when snake is on any of the boundary then changing direction should be restricted
-    2. Food on the edge is not eaten when the snake's position is reset on the edge
-        when on boundary
-]]
-
 function love.load()
     require('lib.class')
     require('src.snake')
