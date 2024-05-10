@@ -19,13 +19,6 @@ function Snake:update_head()
     head.x = head.x + (dir_x * speed)
     head.y = head.y + (dir_y * speed)
     
-    local has_ate_food = head.x == food.x and head.y == food.y
-    if has_ate_food then
-        score = score + 1
-        food = Food:new(Food.spawn())
-        table.insert(snake.body, {x=food.x, y=food.y, width=food.width, height=food.height})
-    end
-    
     if head.x < 0 then
         head.x = width - Snake.body_width
     elseif head.x > width then
@@ -34,6 +27,13 @@ function Snake:update_head()
         head.y = height - Snake.body_height
     elseif head.y > height then
         head.y = 0
+    end
+
+    local has_ate_food = head.x == food.x and head.y == food.y
+    if has_ate_food then
+        score = score + 1
+        food = Food:new(Food.spawn())
+        table.insert(snake.body, {x=food.x, y=food.y, width=food.width, height=food.height})
     end
 end
 
