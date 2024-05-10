@@ -10,13 +10,13 @@ function love.keypressed(key)
         else
             grid_on = false
         end
-    elseif key == 'up' and dir_y == 0 and is_running then
+    elseif key == 'up' and dir_y == 0 and is_running and (head.x < width and head.x > 0) then
         dir_x, dir_y = 0, -1
-    elseif key == 'down' and dir_y == 0 and is_running then
+    elseif key == 'down' and dir_y == 0 and is_running and (head.x < width and head.x > 0) then
         dir_x, dir_y = 0, 1
-    elseif key == 'left' and dir_x == 0 and is_running then
+    elseif key == 'left' and dir_x == 0 and is_running and (head.y < height and head.y > 0) then
         dir_x, dir_y = -1, 0
-    elseif key == 'right' and dir_x == 0 and is_running then
+    elseif key == 'right' and dir_x == 0 and is_running and (head.y < height and head.y > 0) then
         dir_x, dir_y = 1, 0
     elseif key == 'space' and is_game_over then
         state = gamestates.RUNNING
