@@ -5,11 +5,7 @@ function love.keypressed(key)
     if key == 'q' then
         love.event.quit()
     elseif key == 'g' and is_running then
-        if not grid_on then
-            grid_on = true
-        else
-            grid_on = false
-        end
+        grid_on = not grid_on
     elseif key == 'up' and dir_y == 0 and is_running and (head.x < width and head.x > 0) then
         dir_x, dir_y = 0, -1
     elseif key == 'down' and dir_y == 0 and is_running and (head.x < width and head.x > 0) then
