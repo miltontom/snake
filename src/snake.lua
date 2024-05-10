@@ -32,7 +32,7 @@ function Snake:update_head()
     local has_ate_food = head.x == food.x and head.y == food.y
     if has_ate_food then
         score = score + 1
-        food = Food:new(Food.spawn())
+        food.x, food.y = Food.spawn()
         table.insert(snake.body, {x=food.x, y=food.y, width=food.width, height=food.height})
     end
 end
