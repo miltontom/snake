@@ -7,7 +7,8 @@ function draw_grid()
     local v_x1, v_y1 = Snake.body_width, 0
     local v_x2, v_y2 = Snake.body_width, height
 
-    for i = 1, 30 do
+    local total_lines = width / Snake.body_width
+    for i = 1, total_lines do
         love.graphics.line(h_x1, h_y1, h_x2, h_y2)
         h_y1 = h_y1 + Snake.body_width
         h_y2 = h_y2 + Snake.body_width
