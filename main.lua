@@ -34,6 +34,7 @@ function love.update(dt)
                 state = gamestates.GAME_OVER
             end
 
+            update_direction()
             timer = 0
         end
     end
