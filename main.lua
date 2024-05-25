@@ -41,6 +41,7 @@ function love.update(dt)
 end
 
 function love.draw()
+    love.graphics.setColor(WHITE)
     snake:draw()
     food:draw()
 

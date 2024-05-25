@@ -17,7 +17,8 @@ function Food.spawn()
     return rand_x, rand_y
 end
 
+local food_sprite = love.graphics.newImage('assets/food.png')
+
 function Food:draw()
-    love.graphics.setColor(RED)
-    love.graphics.rectangle('fill', self.x, self.y, Food.width, Food.height)
+    love.graphics.draw(food_sprite, self.x, self.y)
 end

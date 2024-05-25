@@ -59,13 +59,30 @@ function Snake:is_colliding_with_self()
     return false
 end
 
+local snake_head_right = love.graphics.newImage('assets/snake_head_right.png')
+local snake_head_left = love.graphics.newImage('assets/snake_head_left.png')
+local snake_head_up = love.graphics.newImage('assets/snake_head_up.png')
+local snake_head_down = love.graphics.newImage('assets/snake_head_down.png')
+local snake_body = love.graphics.newImage('assets/snake_body.png')
+
+local function update_head_dir()
+    if dir_x == 0 and dir_y == -1 then
+        return snake_head_up
+    elseif dir_x == 0 and dir_y == 1 then
+        return snake_head_down
+    elseif dir_x == 1 and dir_y == 0 then
+        return snake_head_right
+    else
+        return snake_head_left
+    end
+end
+
 function Snake:draw()
     for i, v in ipairs(self.body) do
         if i == 1 then
-            love.graphics.setColor(BLUE)
+            love.graphics.draw(update_head_dir(), v.x, v.y)
         else
-            love.graphics.setColor(LIGHT_BLUE)
+            love.graphics.draw(snake_body, v.x, v.y)
         end
-        love.graphics.rectangle('fill', v.x, v.y, Snake.body_width, Snake.body_height)
     end
 end
