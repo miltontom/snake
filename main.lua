@@ -48,13 +48,18 @@ function love.draw()
         draw_grid()
     end
     
-    love.graphics.setColor(BLACK)
-    love.graphics.setFont(love.graphics.newFont(20))
-    love.graphics.print(string.format('Score: %d', score))
-    
     if state == gamestates.GAME_OVER then
-        game_over_text = 'Press \'Space\' to Restart'
+        love.graphics.setColor(BLACK)
+        local score_text_offset = -40
+        score_text = string.format('Score: %d', score)
         text = love.graphics.newFont(40)
+        love.graphics.setFont(text)
+        score_x = (width / 2) - text:getWidth(score_text) / 2
+        score_y = (height / 2) - text:getHeight(score_text) / 2 + score_text_offset
+        love.graphics.print(score_text, score_x, score_y)
+
+        game_over_text = 'Press \'Space\' to Restart'
+        text = love.graphics.newFont(20)
         love.graphics.setFont(text)
         game_over_text_x = (width / 2) - text:getWidth(game_over_text) / 2
         game_over_text_y = (height / 2) - text:getHeight(game_over_text) / 2
