@@ -1,4 +1,5 @@
 ![Static Badge](https://img.shields.io/badge/L%C3%96VE-11.4-pink?labelColor=pink&color=%2333c8ffff)
+![GitHub Tag](https://img.shields.io/github/v/tag/miltontom/snake?label=version)
 
 # Snake
 A basic implementation of the classic Snake game in LÖVE
