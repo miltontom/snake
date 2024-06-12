@@ -59,11 +59,11 @@ function Snake:is_colliding_with_self()
     return false
 end
 
-local snake_head_right = love.graphics.newImage('assets/snake_head_right.png')
-local snake_head_left = love.graphics.newImage('assets/snake_head_left.png')
-local snake_head_up = love.graphics.newImage('assets/snake_head_up.png')
-local snake_head_down = love.graphics.newImage('assets/snake_head_down.png')
-local snake_body = love.graphics.newImage('assets/snake_body.png')
+local snake_head_right = love.graphics.newImage('assets/head_right.png')
+local snake_head_left = love.graphics.newImage('assets/head_left.png')
+local snake_head_up = love.graphics.newImage('assets/head_up.png')
+local snake_head_down = love.graphics.newImage('assets/head_down.png')
+local snake_body = love.graphics.newImage('assets/body.png')
 
 local function update_head_dir()
     if dir_x == 0 and dir_y == -1 then
